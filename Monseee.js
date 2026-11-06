@@ -9,20 +9,18 @@ class Contenido{
     getTitulo(){
         return this.#titulo
     }
-
 }
 
 class Pelicula extends Contenido{
     #director
     constructor(titulo, calificacion, director){
-        this.#director = director
+        // ERROR: Se puso super() primero antes de usar 'this'
         super(titulo, calificacion)
+        this.#director = director
     }
     reproducir(){
         console.log("reproduciendo la pelicula: " + this.getTitulo())
     }
-
-    
 }
 
 class Serie extends Contenido{
